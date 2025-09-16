@@ -4,47 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScoreMaster Local</title>
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="manifest" href="manifest.json" />
 </head>
+<body class="bg-gray-100 p-4 font-sans">
 
-<body>
-  <h1>ScoreMaster Local</h1>
+  <h1 class="text-2xl font-bold text-center mb-6">ScoreMaster Local</h1>
 
   <!-- Group Setup -->
-<div id="group-setup">
-  <input type="text" id="group-name" placeholder="Group Name" />
-  <div id="player-form">
-    <div class="player-entry">
-      <input type="text" placeholder="Name" class="player-name" />
-      <input type="text" placeholder="Avatar (emoji)" class="player-avatar" />
+  <div id="group-setup" class="mb-6">
+    <input type="text" id="group-name" placeholder="Group Name" class="w-full p-2 mb-2 border rounded" />
+    <div id="player-form">
+      <div class="player-entry flex gap-2 mb-2">
+        <input type="text" placeholder="Name" class="player-name flex-1 p-2 border rounded" />
+        <input type="text" placeholder="Avatar (emoji)" class="player-avatar flex-1 p-2 border rounded" />
+      </div>
     </div>
+    <button onclick="addPlayerField()" class="bg-blue-500 text-white px-4 py-2 rounded mr-2">+ Add Player</button>
+    <button onclick="createGroup()" class="bg-green-500 text-white px-4 py-2 rounded">Create Group</button>
   </div>
-  <button onclick="addPlayerField()">+ Add Player</button>
-  <button onclick="createGroup()">Create Group</button>
-</div>
-
 
   <!-- Player Grid -->
-  <div id="player-grid"></div>
+  <div id="player-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mb-6"></div>
 
   <!-- Controls -->
-  <div id="controls">
-    <button onclick="setMode('oneToOne')">One-to-One</button>
-    <button onclick="setMode('oneToMany')">One-to-Many</button>
-    <button onclick="setMode('manyToOne')">Many-to-One</button>
+  <div id="controls" class="flex flex-wrap gap-2 mb-6">
+    <button onclick="setMode('oneToOne')" class="bg-purple-500 text-white px-4 py-2 rounded">One-to-One</button>
+    <button onclick="setMode('oneToMany')" class="bg-yellow-500 text-white px-4 py-2 rounded">One-to-Many</button>
+    <button onclick="setMode('manyToOne')" class="bg-pink-500 text-white px-4 py-2 rounded">Many-to-One</button>
   </div>
 
   <!-- Session Actions -->
-  <div id="session-actions">
-    <button onclick="rateAndRank()">Rate & Rank</button>
-    <button onclick="saveSession()">Save Session</button>
-    <button onclick="loadHistory()">View History</button>
-    <button onclick="exportHistory()">Export History</button>
+  <div id="session-actions" class="flex flex-wrap gap-2 mb-6">
+    <button onclick="rateAndRank()" class="bg-indigo-500 text-white px-4 py-2 rounded">Rate & Rank</button>
+    <button onclick="saveSession()" class="bg-teal-500 text-white px-4 py-2 rounded">Save Session</button>
+    <button onclick="loadHistory()" class="bg-gray-700 text-white px-4 py-2 rounded">View History</button>
+    <button onclick="exportHistory()" class="bg-red-500 text-white px-4 py-2 rounded">Export History</button>
   </div>
 
   <!-- History Log -->
-  <div id="history-log"></div>
+  <div id="history-log" class="space-y-4"></div>
 
   <script src="script.js"></script>
 </body>

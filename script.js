@@ -63,13 +63,14 @@ function renderPlayers() {
   grid.innerHTML = "";
   players.forEach((player, index) => {
     const div = document.createElement("div");
-    div.className = "player";
+    div.className = "bg-white border border-gray-800 p-4 text-center rounded shadow";
     div.innerHTML = `
-      <div style="font-size: 2em">${player.avatar}</div>
+      <div class="text-3xl mb-2">${player.avatar}</div>
       <strong>${player.name}</strong><br>
       Score: ${player.score}<br>
       🏆 Wins: ${player.wins || 0} | ❌ Losses: ${player.losses || 0}
     `;
+
     div.onclick = () => handleClick(index);
     grid.appendChild(div);
   });
