@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScoreMaster Local</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+
+<body>
+  <h1>ScoreMaster Local</h1>
+
+  <!-- Group Setup -->
+<div id="group-setup">
+  <input type="text" id="group-name" placeholder="Group Name" />
+  <div id="player-form">
+    <div class="player-entry">
+      <input type="text" placeholder="Name" class="player-name" />
+      <input type="text" placeholder="Avatar (emoji)" class="player-avatar" />
+    </div>
+  </div>
+  <button onclick="addPlayerField()">+ Add Player</button>
+  <button onclick="createGroup()">Create Group</button>
+</div>
+
+
+  <!-- Player Grid -->
+  <div id="player-grid"></div>
+
+  <!-- Controls -->
+  <div id="controls">
+    <button onclick="setMode('oneToOne')">One-to-One</button>
+    <button onclick="setMode('oneToMany')">One-to-Many</button>
+    <button onclick="setMode('manyToOne')">Many-to-One</button>
+  </div>
+
+  <!-- Session Actions -->
+  <div id="session-actions">
+    <button onclick="rateAndRank()">Rate & Rank</button>
+    <button onclick="saveSession()">Save Session</button>
+    <button onclick="loadHistory()">View History</button>
+    <button onclick="exportHistory()">Export History</button>
+  </div>
+
+  <!-- History Log -->
+  <div id="history-log"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
